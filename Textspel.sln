@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textspel", "Textspel\Textspel.csproj", "{D23980F1-82FC-4552-B11A-F8E6EB0FC8B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D23980F1-82FC-4552-B11A-F8E6EB0FC8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23980F1-82FC-4552-B11A-F8E6EB0FC8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23980F1-82FC-4552-B11A-F8E6EB0FC8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23980F1-82FC-4552-B11A-F8E6EB0FC8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {855EF23C-7070-45D6-AADD-A62906A87E94}
+	EndGlobalSection
+EndGlobal
