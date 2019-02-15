@@ -31,7 +31,7 @@ namespace Textspel
                 if ((line + word).Length > myLimit)
                 {
                     newSentence.AppendLine(line);
-                    line = " ";
+                    line = "";
                 }
       
                 line += string.Format("{0} ", word);
@@ -87,11 +87,9 @@ namespace Textspel
         // och startar spelet
         static void Main(string[] args)
         {
-            SkrivUtText("Välkommen till mitt spel. Jag föreslår att du spelar det i ett mörkt, tyst rum. Jag kommer inte att berätta för dig vem du är." +
-               "Den enda ledtråd jag kommer ge dig är att det är tidigt 1800- tal i Romanien." +
-              "Du befinner dig i ett kloster. \n\n" );
+            SkrivUtText("Welcome! I am not going to tell you who you are, because you know that. Your goal is to escape the building in which you are being captured. Good luck. \n\n" );
 
-            SkrivUtText("Pressa valfri tangent när du är redo att börja.");
+            SkrivUtText("Press any key to start");
 
             Console.ReadKey(true);
             Console.Clear();
@@ -101,32 +99,57 @@ namespace Textspel
 
         public static void Start_Path()
         {
-            SkrivUtText("Du vaknade upp tidigt denna morgon. Solen hade fortfarande inte gått upp, och den kyliga vinden hördes utanför stenväggarna. " +
-                 "Plötsligt ser du en skugga vid dörren.\n 'Ewe, är det du?' ropar du.\n Inget svar.");
+            SkrivUtText("The complete darkness surrounds you, and you feel a stinging pain in your head. Where are you? This doesn't feel right.. The" +
+                " wooden floor you're laying on is cold and hard, maybe you better get up?");
 
-            string[] val = new string[] { "Ropa igen på 'Ewe'", "Ligg kvar och se vad som händer" };
+            string[] val = new string[] { "Start shouting to get someones attention", "Get up and start exploring the pitch black room" };
             PresenteraVal(val);
 
-            PathChooser(Ropa_Path, Vänta_Path);
+            PathChooser(Shout_Path, Explore_Path);
         }
 
-        public static void Ropa_Path()
+        public static void Shout_Path()
         {
 
-            SkrivUtText("'Hallå, Ewe är det du?'\n\n\nPlötsligt försvann skuggan utan att ge ifrån sig ett ljud. Vad i..");
-            string[] val = new string[] {"Gå upp och följ efter skuggan", "Gå upp och gör dig i ordning"};
+            SkrivUtText("'Hello, is anyone here!?'\n\n");
+            SkrivUtText("The only response is silence..");
+            string[] val = new string[] {"Shout again", "Get up and start exploring the pitch black room" };
             PresenteraVal(val);
 
-            PathChooser(GåUpp_Path, GörDigiOrdning_Path);
+            PathChooser(Shout_again_Path, Explore_Path);
+        }
+        public static void Shout_again_Path()
+        {
+            SkrivUtText("'Hello!? Anyone here?! '\n\n");
+            SkrivUtText("After a couple of seconds you begin to hear distant footsteps, but after a couple of seconds the footsteps stops. " +
+                "Suddenly you hear a metallic sound, and a small, small gap in the door appears. The light from the room or corridor outside blinds you " +
+                "for a moment, until you see a hand reaching in. In the hand there is a glas of dark liquid.");
+            SkrivUtText("'Take it', says a dark, old voice.");
 
+            string[] val = new string[] { "Get up and take the liquid", "Ask the person what is happening" };
+            PresenteraVal(val);
+
+            PathChooser(Grap_Liquid_Path, Ask_For_Explanation_Path);
         }
-        public static void Vänta_Path()
+        public static void Grap_Liquid_Path()
         {
-            Console.WriteLine("För några minuter så händer ingenting.");
+            SkrivUtText("You rise from the cold floor and make your way to the door. Without a word you grab the glas with the dark liquid. It looks disgusting.");
+            SkrivUtText("'What is in it?' you ask.");
+            SkrivUtText("'Just drink it' the person responds.");
+
+            string[] val = new string[] { "Drink the dark, mysterious liquid", "Ask again what the liquid is" };
+            PresenteraVal(val);
+
+            PathChooser(Grap_Liquid_Path, Ask_For_Explanation_Path);
         }
-        public static void GåUpp_Path()
+        public static void Ask_For_Explanation_Path()
         {
-            SkrivUtText("Du går upp och börjar göra dig i ordning. Du tänker inte så mycket på skuggan, det kunde ju har varit vad som helst? Nu var det dags för morgonbönen.");
+            SkrivUtText("You start exploring the pitch black room.");
+        }
+
+        public static void Explore_Path()
+        {
+            SkrivUtText("You start exploring the pitch black room.");
         }
         public static void GörDigiOrdning_Path()
         {
